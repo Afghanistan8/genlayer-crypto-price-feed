@@ -65,3 +65,26 @@ Lagos, London, New York, Tokyo, Dubai
 Deploy on [GenLayer Studio](https://studio.genlayer.com) and call:
 - `get_cities_weather()` to fetch all cities
 - `read_cities_weather()` to read stored results
+
+---
+
+# GenLayer Hacker News Sentiment Library
+
+Analyzes sentiment of Hacker News stories using GenLayer's AI validators.
+
+## Features
+- Analyze sentiment for any topic
+- Analyze today's top HN stories
+- Uses LLM reasoning for intelligent sentiment classification
+- Returns: Positive / Negative / Neutral + summary
+
+## Functions
+| Function | Type | Description |
+|---|---|---|
+| `analyze_topic(topic)` | Write | Analyze any topic e.g. bitcoin |
+| `analyze_top_stories()` | Write | Analyze today's top stories |
+| `read_topic_sentiment()` | Read | Read topic result |
+| `read_top_stories_sentiment()` | Read | Read top stories result |
+
+## Built For
+GenLayer Tools & Infrastructure Bounty Task
