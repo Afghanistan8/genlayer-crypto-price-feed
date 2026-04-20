@@ -31,3 +31,37 @@ Deploy on [GenLayer Studio](https://studio.genlayer.com) and call:
 
 ## Built For
 GenLayer Tools & Infrastructure Bounty Task
+
+
+---
+
+# GenLayer Weather Feed Library
+
+A GenLayer Intelligent Contract that fetches live weather data
+from Open-Meteo API directly on-chain using AI validators.
+
+## Features
+- Fetch weather for any city using coordinates
+- Fetch 5 major cities at once
+- No API key needed
+- Supports: Weather condition and Humidity
+
+## Weather Data
+- **Condition** — Clear sky, Partly cloudy, Rain, etc.
+- **Humidity** — Percentage relative humidity
+
+## Cities Supported
+Lagos, London, New York, Tokyo, Dubai
+
+## Functions
+| Function | Type | Description |
+|---|---|---|
+| `get_weather(city, lat, lon)` | Write | Fetch any city weather |
+| `get_cities_weather()` | Write | Fetch all 5 cities |
+| `read_weather()` | Read | Read last city result |
+| `read_cities_weather()` | Read | Read all 5 cities |
+
+## Usage
+Deploy on [GenLayer Studio](https://studio.genlayer.com) and call:
+- `get_cities_weather()` to fetch all cities
+- `read_cities_weather()` to read stored results
