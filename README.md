@@ -88,3 +88,46 @@ Analyzes sentiment of Hacker News stories using GenLayer's AI validators.
 
 ## Built For
 GenLayer Tools & Infrastructure Bounty Task
+
+---
+
+# GenLayer Secure API Key Proxy
+
+A full proxy server pattern for keeping API keys private
+while allowing GenLayer Intelligent Contracts to use them securely.
+
+## The Problem
+Blockchain contract code is public — anyone can read it.
+You cannot put API keys directly in a contract.
+
+## The Solution
+
+## Files
+| File | Description |
+|---|---|
+| `proxy_server.py` | Flask server that holds API keys privately |
+| `secure_api_contract.py` | GenLayer contract that calls the proxy |
+| `requirements.txt` | Python dependencies |
+| `.env.example` | Template for storing API keys |
+
+## APIs Supported
+| API | Endpoint | Key Required |
+|---|---|---|
+| OpenWeatherMap | `/weather/<city>` | Yes |
+| NewsAPI | `/news/<topic>` | Yes |
+| Alpha Vantage | `/stock/<symbol>` | Yes |
+
+## How to Run the Proxy
+1. Install: `pip install -r requirements.txt`
+2. Copy `.env.example` to `.env` and add your keys
+3. Run: `python proxy_server.py`
+4. Server starts at `http://localhost:5000`
+
+## Security Features
+- API keys stored in `.env` file only
+- `X-Proxy-Secret` header authentication
+- Rate limiting (100 requests per IP)
+- Keys never appear in contract code
+
+## Built For
+GenLayer Tools & Infrastructure Bounty Task
